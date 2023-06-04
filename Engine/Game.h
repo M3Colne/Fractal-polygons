@@ -36,11 +36,33 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
+    Vec2 ChangeXY(float x, float y);
+    Vec2 ChangeXY(Vec2 p);
+    void DrawL(Vec2 p0, Vec2 p1, Color c);
 	/********************************/
 private:
 	MainWindow& wnd;
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+    bool showRotation = true;
+    bool polyIncr = true;
+    bool inhibPolyIncr = false;
+    bool polyDecr = true;
+    bool inhibPolyDecr = false;
+
+    bool iterIncr = true;
+    bool inhibIterIncr = false;
+
+    bool iterDecr = true;
+    bool inhibIterDecr = false;
+
+    bool inhibSRotation = false;
+    const float radius = 200.0f;
+    float angle = 0.0f;
+    const float PI = 3.1415926f;
+    int iterations = 2;
+
+    std::vector<Vec2> poly;
 	/********************************/
 };
